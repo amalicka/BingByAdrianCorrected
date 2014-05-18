@@ -19,6 +19,7 @@ public class FileHandler {
 		try{
 			if (!isReading){
 			 m_write = new FileWriter( path , false);
+			 m_print = new PrintWriter(m_write);
 			 m_read = null;
 			}else{
 			  m_read = new BufferedReader(new FileReader(path));
@@ -27,7 +28,7 @@ public class FileHandler {
 			}
 				
 				
-			 m_print = new PrintWriter(m_write);
+			
 		}
 		catch (IOException e){
 			System.out.println(e);
@@ -61,7 +62,7 @@ public class FileHandler {
 		if (m_read==null)
 			throw new IOException("You are in writing mode.");
 		
-		
+
 		
 		return m_read.readLine();
 	}
@@ -74,14 +75,14 @@ public class FileHandler {
 		}
 		return ret;
 	}
-	public String[] readAll() throws IOException {
-		int size = this.amountOfLines();
-		String[] ret = new String[size];
+	public StringBuffer readAll() throws IOException {
+
+		StringBuffer ret = new StringBuffer();
 		String line;
 		int i = 0;
 		while((line = this.readLine())!=null){
 			i += 1;
-			ret[i] = line;
+			ret.append(line).append( "\n");
 		}	
 		return ret;
 	}

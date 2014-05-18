@@ -1,18 +1,27 @@
 
 import java.util.regex.Pattern;
+import java.nio.CharBuffer;
+
 import java.util.regex.Matcher;
-public class XmlMatcher {
-	private String stream;
-	public XmlMatcher(String s){
+public class XmlMatcher<T> {
+	private T stream;
+	public XmlMatcher(T s){
 		setStream(s);
 	}
-	public void setStream (String s){
+
+	public void setStream (T s){
 		stream = s;
 	}
 	
-	public Matcher match(String reg){
+	public Matcher match(String reg) throws Exception{
         Pattern p = Pattern.compile( reg);
-        return p.matcher(stream);		
+        if (stream instanceof String){
+        	return p.matcher((String)stream);		
+        }
+        if (stream instanceof CharBuffer){
+        	return p.matcher((String)stream);		
+        }  
+        throw new Exception("Only String and CharBuffer is suppoerted.");
 	}
 	public String matchSingleTag(String tagName){
          Matcher m = matchTag(tagName);
@@ -22,10 +31,15 @@ public class XmlMatcher {
          return "";
 	}
 	public Matcher matchTag(String tagName, boolean inline){
-		if (!inline)
-			return match("<"+tagName+".+?>(.+?)</"+tagName+">");
-		else
-			return match("<"+tagName+"(.+?)/>");
+		try{
+			if (!inline)
+				return match("<"+tagName+".+?>(.+?)</"+tagName+">");
+			else
+				return match("<"+tagName+"(.+?)/>");
+		}catch (Exception e){
+			System.out.print(e.getMessage());
+			return null;
+		}
 		
 	}
 	public Matcher matchTag(String tagName){

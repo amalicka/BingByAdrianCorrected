@@ -90,8 +90,8 @@ public class LuceneIndexDirectoryOrFile {
       System.out.println("Indexing to directory '" + indexPath + "'...");
 
       Directory dir = FSDirectory.open(new File(indexPath));
-      Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_46);
-      IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_46, analyzer);
+      Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_40);
+      IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_40, analyzer);
 
       if (create) {
         // Create a new index in the directory, removing any
@@ -175,10 +175,10 @@ public class LuceneIndexDirectoryOrFile {
         	
         //	 File file = new File(fileToBeIndexed);
              BufferedReader br = new BufferedReader(new FileReader(file));
-             String title = null;
-             String docno = null;
-             String text = null;
-             String line = null;
+             String title = "";
+             String docno = "";
+             String text = "";
+             String line = "";
              boolean docStarted = false;
              Document doc = null;
              while ((line = br.readLine()) != null) {

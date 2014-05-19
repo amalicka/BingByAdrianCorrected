@@ -27,7 +27,7 @@ public class XmlMatcher<T> {
         Pattern p = Pattern.compile( reg,Pattern.DOTALL);
         Matcher m =  p.matcher(contet);
         if (m.find())
-        	return "AD"+m.group(1);	
+        	return m.group(1);	
         
         return "Nothing found";
 

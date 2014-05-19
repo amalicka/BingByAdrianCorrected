@@ -39,19 +39,19 @@ public class FileHandler {
 			if (m_write==null)
 				throw new IOException("You are in reading mode.");
 			if (newline){
-				m_print.println(s);
+				m_write.append(s);
 				return ;
 			}
-			m_print.print(s);
+			m_write.append(s);
 			
 	}
 	
 	public void write( String s){
-		try { write(s, false); } catch (IOException ignore) {}
+		try { write(s, false); } catch (IOException ignore) {System.out.println(ignore.getMessage());}
 	}
 	
 	public  void writeln( String s){
-		try { write(s, true); } catch (IOException ignore) {}
+		try { write(s, true); } catch (IOException ignore) {System.out.println(ignore.getMessage());}
 	}
 	
 	public void endwrite(){

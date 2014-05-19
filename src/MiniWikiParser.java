@@ -28,25 +28,29 @@ public class MiniWikiParser {
 	       String pattern = "<page>(.+?)</page>";
 	      String s = miniwiki.match(pattern);
 	      int matches = 0;
-	        while(s  != null && matches < 20){
-	        	System.out.println("<DOC>");
-	        	System.out.println(" <DOC NO>"+matches+" </DOC NO>");
-	  	        
+	      FileHandler xmlWrite = new FileHandler("saved.xml",false);
+	        while(s  != null){
+	        	
+	        	xmlWrite.write("<DOC>");
+	        	xmlWrite.write(" <DOC NO>"+matches+" </DOC NO>");
+	        	xmlWrite.write("<DOC>");
 	        	String title = XmlMatcher.match(s, "<title>(.+?)</title>");
 	        	String text = XmlMatcher.match(s, "<text.+?>(.+?)</text>");	
-	        	System.out.println(" <TITLE>"+title+" </TITLE>");
+	        	xmlWrite.write(" <TITLE>"+title+" </TITLE>");
 	        
-	        	System.out.println(" <TEXT>");
+	        	xmlWrite.write(" <TEXT>");
 	        		text = text.replaceAll("[\n\r]", "");
-	        		System.out.println(text.trim());
-	        	System.out.println(" </TEXT>");
+	        		xmlWrite.write(text.trim());
+	        	xmlWrite.write(" </TEXT>");
 	        	        	
 	        	//System.out.println(title);
 	        		matches = matches + 1;
 	        		s = miniwiki.match(pattern);
 	        		//System.out.println(s);
 	        		
-	        	System.out.println("</DOC>");
+	        	xmlWrite.write("</DOC>");
+	        	xmlWrite.write("\n");
 	        }	
+	        xmlWrite.endwrite();
 	}
 }

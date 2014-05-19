@@ -81,7 +81,7 @@ public class BingMain {
     public static void main(String[] args) {
  
         
-        String doc = BingMain.query("Led Zeppelin");
+       /* String doc = BingMain.query("Led Zeppelin");
 
         XmlMatcher matcher = new XmlMatcher<String>(doc);
         Matcher m = matcher.matchTag("entry");
@@ -107,10 +107,12 @@ public class BingMain {
         	 System.out.println(url);    
         	 System.out.println("\n");   
         }
-        f.endwrite();
-       
+        f.endwrite();*/
+       System.out.println("Loading big xml file");
         MiniWikiParser miniwiki = new MiniWikiParser("miniwiki.xml");
-        miniwiki.parse();
+       // miniwiki.parse();
+        miniwiki.test();
+        System.out.println("Ended parsing");
         
      }
    

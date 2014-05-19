@@ -23,4 +23,34 @@ public class MiniWikiParser {
        
        System.out.println("Ended parsing xml. Matches:"+matches);		
 	}
+	public void test(){
+		BigFile miniwiki = new BigFile("../miniwiki.xml");
+	       String pattern = "<page>(.+?)</page>";
+	      String s = miniwiki.match(pattern);
+	      int matches = 0;
+	      FileHandler xmlWrite = new FileHandler("../saved.xml",false);
+	        while(s  != null){
+	        	
+	        	xmlWrite.write("<DOC>");
+	        	xmlWrite.write(" <DOC NO>"+matches+" </DOC NO>");
+	        	xmlWrite.write("<DOC>");
+	        	String title = XmlMatcher.match(s, "<title>(.+?)</title>");
+	        	String text = XmlMatcher.match(s, "<text.+?>(.+?)</text>");	
+	        	xmlWrite.write(" <TITLE>"+title+" </TITLE>");
+	        
+	        	xmlWrite.write(" <TEXT>");
+	        		text = text.replaceAll("[\n\r]", "");
+	        		xmlWrite.write(text.trim());
+	        	xmlWrite.write(" </TEXT>");
+	        	        	
+	        	//System.out.println(title);
+	        		matches = matches + 1;
+	        		s = miniwiki.match(pattern);
+	        		//System.out.println(s);
+	        		
+	        	xmlWrite.write("</DOC>");
+	        	xmlWrite.write("\n");
+	        }	
+	        xmlWrite.endwrite();
+	}
 }

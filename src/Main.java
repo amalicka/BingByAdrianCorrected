@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Loading big xml file");
          MiniWikiParser miniwiki = new MiniWikiParser("miniwiki.xml");
         // miniwiki.parse();
-         miniwiki.test();
+         miniwiki.parse();
          System.out.println("Ended parsing");
          
     	

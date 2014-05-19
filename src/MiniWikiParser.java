@@ -28,8 +28,7 @@ public class MiniWikiParser {
 	       String pattern = "<page>(.+?)</page>";
 	      String s = miniwiki.match(pattern);
 	      int matches = 0;
-	      FileHandler xmlWrite = new FileHandler("../saved.xml",false);
-      		xmlWrite.write("<DOCS>\n");
+	      FileHandler xmlWrite = new FileHandler("../Data/Miniwiki.xml",false);
 	        while(s  != null){
 	        	
 
@@ -53,7 +52,6 @@ public class MiniWikiParser {
 	        	
 	        	xmlWrite.write("\n");
 	        }	
-	        xmlWrite.write("</DOCS>");
 	        xmlWrite.endwrite();
 	        
 	}

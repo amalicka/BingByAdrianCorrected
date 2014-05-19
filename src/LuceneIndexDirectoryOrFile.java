@@ -19,7 +19,7 @@
  */
 
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.standard.*;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.Field.Store;
@@ -54,8 +54,8 @@ public class LuceneIndexDirectoryOrFile {
 //	private static String indexDir ="C:/DATA/WikiIndexDirectory";
 //	private static String sourceDir ="H:/DATA/trecWikipedia";
 	
-	private static String indexDir ="C:/DATA/Wiki350LuceneIndex";
-	private static String sourceDir ="C:/cygwin/home/wlodek/wikipedia/trecWikipedia350chars";
+	private static String indexDir ="LuceneMiniWikiIndex";
+	private static String sourceDir ="../Data";
 
 
   private LuceneIndexDirectoryOrFile() {}
@@ -208,12 +208,12 @@ public class LuceneIndexDirectoryOrFile {
                  }
                  if (docStarted) {
                      int i = -1;
-                     if (((i = line.indexOf("<title>"))>-1) && (line.indexOf("</title>")>-1)) {
-                         title = (line.substring(i + "<title>".length(), line.indexOf("</title>")));
-                     } else if ((i = line.indexOf("<text>")) > -1) {
-                         text = line.substring(i + "<text>".length());
-                     } else if ((i = line.indexOf("<docno>")) > -1) {
-                         docno = line.substring(i + "<docno>".length(), line.indexOf("</docno>"));
+                     if (((i = line.indexOf("<TITLE>"))>-1) && (line.indexOf("</TITLE>")>-1)) {
+                         title = (line.substring(i + "<TITLE>".length(), line.indexOf("</TITLE>")));
+                     } else if ((i = line.indexOf("<TEXT>")) > -1) {
+                         text = line.substring(i + "<TEXT>".length());
+                     } else if ((i = line.indexOf("<DOCNO>")) > -1) {
+                         docno = line.substring(i + "<DOCNO>".length(), line.indexOf("</DOCNO>"));
                      }
 
                  }

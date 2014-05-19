@@ -34,8 +34,8 @@ public class MiniWikiParser {
 
 	        	xmlWrite.write("<DOC>\n");
 	        	xmlWrite.write("<DOCNO>"+matches+"</DOCNO>\n");
-	        	String title = XmlMatcher.match(s, "<title>(.+?)</title>");
-	        	String text = XmlMatcher.match(s, "<text.+?>(.+?)</text>");	
+	        	String title = TextMatcher.match(s, "<title>(.+?)</title>");
+	        	String text = TextMatcher.match(s, "<text.+?>(.+?)</text>");	
 	        	xmlWrite.write("<TITLE>"+title.trim()+"</TITLE>\n");
 	        
 	        	xmlWrite.write("<TEXT>");

@@ -75,7 +75,7 @@ public class LuceneSearchFiles {
   }
   public static void main(String[] args) throws Exception {
 	  
-	  
+	  //Test searching for bing and lucene with output print.
 	  search("Warsaw", "text", 5);
 	  BingSearch.search("Warsaw", "title", 5);
 	  JQuestions jq = new JQuestions();

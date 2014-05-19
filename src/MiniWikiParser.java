@@ -29,19 +29,20 @@ public class MiniWikiParser {
 	      String s = miniwiki.match(pattern);
 	      int matches = 0;
 	      FileHandler xmlWrite = new FileHandler("../saved.xml",false);
+      		xmlWrite.write("<DOCS>\n");
 	        while(s  != null){
 	        	
-	        	xmlWrite.write("<DOC>");
-	        	xmlWrite.write(" <DOC NO>"+matches+" </DOC NO>");
-	        	xmlWrite.write("<DOC>");
+
+	        	xmlWrite.write("<DOC>\n");
+	        	xmlWrite.write("<DOCNO>"+matches+"</DOCNO>\n");
 	        	String title = XmlMatcher.match(s, "<title>(.+?)</title>");
 	        	String text = XmlMatcher.match(s, "<text.+?>(.+?)</text>");	
-	        	xmlWrite.write(" <TITLE>"+title+" </TITLE>");
+	        	xmlWrite.write("<TITLE>"+title.trim()+"</TITLE>\n");
 	        
-	        	xmlWrite.write(" <TEXT>");
+	        	xmlWrite.write("<TEXT>");
 	        		text = text.replaceAll("[\n\r]", "");
 	        		xmlWrite.write(text.trim());
-	        	xmlWrite.write(" </TEXT>");
+	        	xmlWrite.write("</TEXT>\n");
 	        	        	
 	        	//System.out.println(title);
 	        		matches = matches + 1;
@@ -49,8 +50,11 @@ public class MiniWikiParser {
 	        		//System.out.println(s);
 	        		
 	        	xmlWrite.write("</DOC>");
+	        	
 	        	xmlWrite.write("\n");
 	        }	
+	        xmlWrite.write("</DOCS>");
 	        xmlWrite.endwrite();
+	        
 	}
 }

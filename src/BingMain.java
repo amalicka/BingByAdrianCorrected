@@ -9,6 +9,7 @@ import org.jsoup.Jsoup;
 import org.w3c.dom.Document;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.nio.CharBuffer;
 
 public class BingMain {
     /**
@@ -82,14 +83,14 @@ public class BingMain {
         
         String doc = BingMain.query("Led Zeppelin");
 
-        XmlMatcher matcher = new XmlMatcher(doc);
+        XmlMatcher matcher = new XmlMatcher<String>(doc);
         Matcher m = matcher.matchTag("entry");
         System.out.println(doc);
         //Writing mode file handler.
         FileHandler f = new FileHandler("output.txt", false);
         while(m.find()){
         	 System.out.println("Match .... \n");
-        	 XmlMatcher m1 = new XmlMatcher(m.group(1));
+        	 XmlMatcher m1 = new XmlMatcher<String>(m.group(1));
         	
 
         	 String title = m1.matchSingleTag("d:Title");
@@ -107,8 +108,11 @@ public class BingMain {
         	 System.out.println("\n");   
         }
         f.endwrite();
-  
-    }
+       
+        MiniWikiParser miniwiki = new MiniWikiParser("miniwiki.xml");
+        miniwiki.parse();
+        
+     }
    
 }
 

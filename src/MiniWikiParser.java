@@ -24,12 +24,12 @@ public class MiniWikiParser {
        System.out.println("Ended parsing xml. Matches:"+matches);		
 	}
 	public void test(){
-		BigFile miniwiki = new BigFile("miniwiki.xml");
+		BigFile miniwiki = new BigFile("../miniwiki.xml");
 	       String pattern = "<page>(.+?)</page>";
 	      String s = miniwiki.match(pattern);
 	      int matches = 0;
-	      FileHandler xmlWrite = new FileHandler("saved.xml",false);
-	        while(s  != null){
+	      FileHandler xmlWrite = new FileHandler("../saved.xml",false);
+	        while(s  != null && matches < 20){
 	        	
 	        	xmlWrite.write("<DOC>");
 	        	xmlWrite.write(" <DOC NO>"+matches+" </DOC NO>");

@@ -29,7 +29,7 @@ public class MiniWikiParser {
 	      String s = miniwiki.match(pattern);
 	      int matches = 0;
 	      FileHandler xmlWrite = new FileHandler("../saved.xml",false);
-	        while(s  != null && matches < 20){
+	        while(s  != null){
 	        	
 	        	xmlWrite.write("<DOC>");
 	        	xmlWrite.write(" <DOC NO>"+matches+" </DOC NO>");

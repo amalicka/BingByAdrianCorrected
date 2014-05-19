@@ -16,7 +16,49 @@ public class BingSearch {
      * @param args
      */
 	public static String AZURE_APPID = "xic29BHExQOPIPAbviyY9yB7Rl7I9UoXpEq51LFk0kg";
-	
+	public static String[] search(String phrase, String field, int hits){
+		
+	    String doc = query(phrase);
+	    String ret[] = new String[hits];
+	    
+	    //Parsing response from Bing.
+        TextMatcher matcher = new TextMatcher<String>(doc);
+        //Matching each entry.
+        Matcher m = matcher.matchTag("entry");
+
+        
+        //Writing mode file handler.
+        //FileHandler f = new FileHandler("output.txt", false);
+        int i = 0;
+        while(m.find() && i < hits){
+        	 TextMatcher m1 = new TextMatcher<String>(m.group(1));
+        	 String tmp = "";
+        	 
+        	 if (field == "title")
+        	 tmp = m1.matchSingleTag("d:Title");
+        	 else if( field =="text")
+        	 tmp = m1.matchSingleTag("d:Description");
+        	 else if (field == "url")
+        	 tmp = m1.matchSingleTag("d:DisplayUrl");
+        	 
+        	 //We want to keep only Main title information:
+        	 int redundantIndex = tmp.indexOf("-");
+        	 if (redundantIndex > 0)
+        		 tmp = tmp.substring(0, tmp.indexOf("-"));
+        	 ret[i] = tmp;
+        	 
+        	 
+        	// f.writeln(title);
+        	// f.writeln(description);
+        	// f.writeln(url);
+        	// f.writeln("");      	
+        	 System.out.println(tmp);
+
+        	 i++;
+        }
+        return ret;
+       // f.endwrite();		
+	}
 	public static String query(String what){
 		
 		 
@@ -52,15 +94,13 @@ public class BingSearch {
         conn.disconnect();
         int find = sb.indexOf("<d:Description");
         int total = find + 1000;
-        System.out.println("Find index: " + find);
-        System.out.println("Total index: " + total);
+
         sb.getChars(find+35, total, buffer, 0);
         String str = new String(buffer);
        
         int find2 = str.indexOf("</d:Description>");
         int total2 = find2 + 400;
-        System.out.println("Find index: " + find);
-        System.out.println("Total index: " + total);
+
         char[] buffer2 = new char[1024];
         
 

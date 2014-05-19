@@ -23,6 +23,16 @@ public class XmlMatcher<T> {
         }  
         throw new Exception("Only String and CharBuffer is suppoerted.");
 	}
+	public static String match(String contet, String reg){
+        Pattern p = Pattern.compile( reg,Pattern.DOTALL);
+        Matcher m =  p.matcher(contet);
+        if (m.find())
+        	return "AD"+m.group(1);	
+        
+        return "Nothing found";
+
+	}
+
 	public String matchSingleTag(String tagName){
          Matcher m = matchTag(tagName);
          if(m.find())

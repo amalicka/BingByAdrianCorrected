@@ -1,10 +1,14 @@
 NLP Class  
 =====================
-Watson inspired Jeperdy Question Answering program.
+IBM Watson inspired Jeperdy question/answering program.
 --------------
 
 **Usage**
+
 @TODO
+
 **Credits**
+
 @TODO
+
 **Hall of Fame**

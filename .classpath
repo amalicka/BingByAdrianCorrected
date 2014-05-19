@@ -16,5 +16,6 @@
 	<classpathentry kind="lib" path="C:/Users/WorK/Desktop/Coursera/NLP/BingByAdrianCorrected/lib/lucene-core-4.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/WorK/Desktop/Coursera/NLP/BingByAdrianCorrected/lib/lucene-analyzers-common-4.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/WorK/Desktop/Coursera/NLP/BingByAdrianCorrected/lib/lucene-queryparser-4.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/WorK/Desktop/Coursera/NLP/BingByAdrianCorrected/lib/opencsv-2.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

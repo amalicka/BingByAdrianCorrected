@@ -61,7 +61,7 @@ public class LuceneSearchFiles {
 	    
 	    for (ScoreDoc hit : hits){
 	        Document doc = searcher.doc(hit.doc);
-	        String path = doc.get("path");	
+	        //String path = doc.get("path");	
 	        String title = doc.get("title");
 	        System.out.println(hit.score+" -"+title);
 	    }

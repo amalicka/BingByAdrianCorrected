@@ -45,6 +45,8 @@ IBM Watson inspired Jeperdy question/answering program.
  **Krzysztof** *'Smugler'* **Wołkowski** <- Providing access to tools that allowed us exchenge data in extremely low badwinch environment.
 
  **Karol** *'Donator'* **Koc** <- 
+ 
+ **Krzysztof** *'Dezerter'* **Gawliński** <- 
 
 ##Donate us!!
 [![Donate us](http://necronia.com/img/paypalbutton.png)](google.pl)

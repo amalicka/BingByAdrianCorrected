@@ -17,6 +17,9 @@ IBM Watson inspired Jeperdy question/answering program.
  
  **More is comming soon.
 
+## TODO:
+  *Merge all components, so it ususe both searchers to give proper answer for certain question.*
+  *Add WEKA Machine learning.*
 ##Credits
  **Adrian** *'NoMoney'* **Jutrowski**
  
@@ -26,13 +29,12 @@ IBM Watson inspired Jeperdy question/answering program.
  
  **Maciej** *'Banker'* **Marzec** <- Providing fast acces to money. :3
  
- **Michał** *'Bussinesman'* **Klepacki** 
+ **Michał** *'Businessman'* **Klepacki** 
  
  **Michał** *'FileLoop'* **Ostrowski** <- Destroying system with loop that creates billions of files. 
 
  **Krzysztof** *'Smugler'* **Wołkowski** <- Providing access to tools that allowed us exchenge data in extremely low badwinch environment.
 
- 
-@TODO
+
 
 ##Hall of Fame

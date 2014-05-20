@@ -10,5 +10,5 @@ public class SearchEntry {
 	String getTitle(){ return m_title;}
 	void setScore(double score){ m_score = score;}
 	void setTitle(String title){ m_title = title;}
-
+	
 }

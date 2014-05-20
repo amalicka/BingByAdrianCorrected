@@ -10,13 +10,14 @@ import org.w3c.dom.Document;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.nio.CharBuffer;
+import java.util.*;
 
 public class BingSearch {
     /**
      * @param args
      */
 	public static String AZURE_APPID = "xic29BHExQOPIPAbviyY9yB7Rl7I9UoXpEq51LFk0kg";
-	public static String[] search(String phrase, String field, int hits){
+	public static List<SearchEntry> search(String phrase, String field, int hits){
 		
 	    String doc = query(phrase);
 	    String ret[] = new String[hits];

@@ -3,8 +3,13 @@ NLP Class
 IBM Watson inspired Jeperdy question/answering program.
 --------------
 ###Features
+ *Giving answer to question taken from Jeperdy.*
 
-@@TODO
+###Dependencies
+ *-Lucene*
+ *-WEKA*
+ *-OpenCSV*
+ *-Http Client*
 
 ###Usage
  *Download miniwikipedia dump.
@@ -19,6 +24,7 @@ IBM Watson inspired Jeperdy question/answering program.
 
 ## TODO:
   *Merge all components, so it ususe both searchers to give proper answer for certain question.*
+  
   *Add WEKA Machine learning.*
 ##Credits
  **Adrian** *'NoMoney'* **Jutrowski**

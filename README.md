@@ -18,19 +18,19 @@ IBM Watson inspired Jeperdy question/answering program.
  **More is comming soon.
 
 ##Credits
- **Adrian *'NoMoney'* **Jutrowski
+ **Adrian** *'NoMoney'* **Jutrowski**
  
- **Przemysław *'Commander'* **Jeżewski
+ **Przemysław** *'Commander'* **Jeżewski**
  
- **Alexandra *'MergingMaker'* **Skierbieszewska
+ **Alexandra** *'MergingMaker'* **Skierbieszewska**
  
- **Maciej *'Banker'* **Marzec <- Providing fast acces to money. :3
+ **Maciej** *'Banker'* **Marzec** <- Providing fast acces to money. :3
  
- **Michał *'Bussinesman'* **Klepacki 
+ **Michał** *'Bussinesman'* **Klepacki** 
  
- **Michał *'FileLoop'* **Ostrowski <- Destroying system with loop that creates billions of files. 
+ **Michał** *'FileLoop'* **Ostrowski** <- Destroying system with loop that creates billions of files. 
 
- **Krzysztof *'Smugler'* **Wołkowski <- Providing access to tools that allowed us exchenge data in extremely low badwinch environment.
+ **Krzysztof** *'Smugler'* **Wołkowski** <- Providing access to tools that allowed us exchenge data in extremely low badwinch environment.
 
  
 @TODO

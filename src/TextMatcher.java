@@ -3,9 +3,9 @@ import java.util.regex.Pattern;
 import java.nio.CharBuffer;
 
 import java.util.regex.Matcher;
-public class XmlMatcher<T> {
+public class TextMatcher<T> {
 	private T stream;
-	public XmlMatcher(T s){
+	public TextMatcher(T s){
 		setStream(s);
 	}
 

@@ -4,7 +4,7 @@ public class MiniWikiParser {
 	public MiniWikiParser(String file) {
 		m_fileName = file;
 	}
-	public void parse(){
+	public void parse2(){
 		//Parse a miniwiki file in seperate class.
         BigFile miniwiki = new BigFile(m_fileName);
 
@@ -23,7 +23,7 @@ public class MiniWikiParser {
        
        System.out.println("Ended parsing xml. Matches:"+matches);		
 	}
-	public void test(){
+	public void parse(){
 		BigFile miniwiki = new BigFile("../miniwiki.xml");
 	       String pattern = "<page>(.+?)</page>";
 	      String s = miniwiki.match(pattern);
@@ -34,8 +34,8 @@ public class MiniWikiParser {
 
 	        	xmlWrite.write("<DOC>\n");
 	        	xmlWrite.write("<DOCNO>"+matches+"</DOCNO>\n");
-	        	String title = XmlMatcher.match(s, "<title>(.+?)</title>");
-	        	String text = XmlMatcher.match(s, "<text.+?>(.+?)</text>");	
+	        	String title = TextMatcher.match(s, "<title>(.+?)</title>");
+	        	String text = TextMatcher.match(s, "<text.+?>(.+?)</text>");	
 	        	xmlWrite.write("<TITLE>"+title.trim()+"</TITLE>\n");
 	        
 	        	xmlWrite.write("<TEXT>");

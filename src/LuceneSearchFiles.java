@@ -79,7 +79,7 @@ public class LuceneSearchFiles {
 	  search("Warsaw", "text", 5);
 	  BingSearch.search("Warsaw", "title", 5);
 	  JQuestions jq = new JQuestions();
-	  
+	  jq.shuffle(10);
   }
 
   /**
